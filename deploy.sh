@@ -7,7 +7,7 @@ set -e
 yarn  build
 
 # 进入生成的文件夹
-cd /build
+cd  ./build
 
 #创建.nojekyll 防止Github Pages build错误
 touch .nojekyll
