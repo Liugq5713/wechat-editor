@@ -11,18 +11,29 @@ export default class Content extends Component {
     }
   }
 
-  componentDidMount(){
+  componentDidMount() {
     axios.get('./test.md').then(res => {
       const content = marked(res.data)
       this.setState({ content })
     })
   }
+  createMarkup = content => {
+    return { __html: content }
+  }
 
   render() {
-    const {content} = this.state
+    const { content } = this.state
     return (
       <div>
-        <Editor content={content}/>
+        <div className='row'>
+          <div className='col s6'>
+            <Editor content={content} />
+          </div>
+          <div
+            className='col s6'
+            dangerouslySetInnerHTML={this.createMarkup(content)}
+          />
+        </div>
         <h1>hello</h1>
       </div>
     )
