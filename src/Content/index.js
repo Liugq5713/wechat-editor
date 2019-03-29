@@ -2,7 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import marked from 'marked'
 import Editor from '../Editor'
-import logo from './logo.svg'
+import RenderedContent from '../RenderedContent'
+import logo from './logo.png'
+import  './index.css'
 
 export default class Content extends Component {
   constructor(props) {
@@ -18,28 +20,18 @@ export default class Content extends Component {
       this.setState({ content })
     })
   }
-  createMarkup = content => {
-    return { __html: content }
-  }
+ 
 
   render() {
     const { content } = this.state
     return (
       <div>
-        <nav>
-          <div class='nav-wrapper'>
-            <a href='/' className='brand-logo'>
-              <img src={logo} alt='test' />
+        <nav className='nav'>
+          <div className='nav-wrapper'>
+            <a href='/' className='brand-logo brand-logo-container'>
+              <img src={logo} alt='test' className='logo' />
             </a>
             <ul id='nav-mobile' className='right hide-on-med-and-down'>
-              <li>
-                <a href='/'>sass</a>
-              </li>
-              <li>
-                <a href='/'>
-                  sass <span className='new badge'>4</span>
-                </a>
-              </li>
               <li>
                 <a href='/'>sass</a>
               </li>
@@ -48,12 +40,22 @@ export default class Content extends Component {
         </nav>
         <div className='row'>
           <div className='col s6'>
+          <div className="card card__bg">
+            <div className="card-content ">
+              <span className="card-title">Card Title</span>
             <Editor content={content} />
+            </div>
           </div>
-          <div
-            className='col s6'
-            dangerouslySetInnerHTML={this.createMarkup(content)}
-          />
+          </div>
+
+          <div className='col s6'          >
+           <div className="card card__bg">
+            <div className="card-content ">
+              <span className="card-title">Card Title</span>
+              <RenderedContent content={content}></RenderedContent>
+            </div>
+          </div>
+          </div>
         </div>
       </div>
     )
