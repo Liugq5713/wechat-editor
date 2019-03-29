@@ -11,9 +11,9 @@ export default class Content extends Component {
         const {
             content
         } = this.props
-        return ( <div dangerouslySetInnerHTML = {
+        return (
+            <div dangerouslySetInnerHTML={
                 this.createMarkup(content)
-            }
-            /> )
-        }
+            } />)
     }
+}
