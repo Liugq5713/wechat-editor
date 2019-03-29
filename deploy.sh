@@ -15,7 +15,7 @@ touch .nojekyll
 git init
 git add -A
 git commit -m 'deploy'
-git push -f "https://${access_token}@github.com/Liugq5713/wechat-editor.git" gh-pages:gh-pages
+git push -f "https://${access_token}@github.com/Liugq5713/wechat-editor.git" master:gh-pages
 
 
 cd -
