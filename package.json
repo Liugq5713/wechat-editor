@@ -5,14 +5,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "codemirror": "^5.45.0",
-    "immutable": "^4.0.0-rc.12",
     "marked": "^0.6.1",
     "materialize-css": "^1.0.0-rc.2",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
-    "react-scripts": "2.1.8",
-    "slate": "^0.44.12",
-    "slate-react": "^0.21.18"
+    "react-scripts": "2.1.8"
   },
   "scripts": {
     "dev": "react-scripts start",
