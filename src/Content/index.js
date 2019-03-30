@@ -3,6 +3,7 @@ import axios from 'axios'
 import marked from 'marked'
 import Editor from '../Editor'
 import RenderedContent from '../RenderedContent'
+import WechatRender from './render'
 import logo from './logo.png'
 import './index.css'
 
@@ -10,20 +11,23 @@ export default class Content extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      content: undefined
+      src_content: undefined,
+      dist_content: undefined
     }
   }
 
   componentDidMount() {
+    const render = new WechatRender()
     axios.get('./test.md').then(res => {
-      const content = marked(res.data)
-      this.setState({ content })
+      this.setState({ src_content: res.data })
+      const dist_content = marked(res.data, { renderer: render.getWechatRenderer() })
+      this.setState({ dist_content })
     })
   }
 
 
   render() {
-    const { content } = this.state
+    const { src_content, dist_content } = this.state
     return (
       <div>
         <nav className='nav'>
@@ -42,8 +46,8 @@ export default class Content extends Component {
           <div className='col s6'>
             <div className="card card__bg">
               <div className="card-content ">
-                <span className="card-title">Card Title</span>
-                <Editor content={content} />
+                <span className="card-title">Markdown内容</span>
+                <Editor content={src_content} />
               </div>
             </div>
           </div>
@@ -51,8 +55,8 @@ export default class Content extends Component {
           <div className='col s6'          >
             <div className="card card__bg">
               <div className="card-content ">
-                <span className="card-title">Card Title</span>
-                <RenderedContent content={content}></RenderedContent>
+                <span className="card-title">全选复制或点此复制，然后在公众号编辑器粘贴</span>
+                <RenderedContent content={dist_content}></RenderedContent>
               </div>
             </div>
           </div>
