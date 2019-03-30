@@ -2,12 +2,13 @@
   "name": "wechat-editor",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://www.so-easy.cc/wechat-editor",
+  "homepage": "https://www.so-easy.cc/wechat-editor",
   "dependencies": {
     "axios": "^0.18.0",
     "codemirror": "^5.45.0",
     "marked": "^0.6.1",
     "materialize-css": "^1.0.0-rc.2",
+    "normalize.css": "^8.0.1",
     "react": "^16.8.5",
     "react-dom": "^16.8.5",
     "react-scripts": "2.1.8"

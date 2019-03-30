@@ -5,6 +5,7 @@ import Editor from '../Editor'
 import RenderedContent from '../RenderedContent'
 import WechatRender from './render'
 import logo from './logo.png'
+import theme from '../Theme'
 import './index.css'
 
 export default class Content extends Component {
@@ -17,10 +18,19 @@ export default class Content extends Component {
   }
 
   componentDidMount() {
-    const render = new WechatRender()
+    const builtinFonts = [
+      { label: '衬线', value: 'serif', fonts: "Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" },
+      { label: '无衬线', value: 'sans-serif', fonts: "Roboto, Oxygen, Ubuntu, Cantarell, PingFangSC-light, PingFangTC-light, 'Open Sans', 'Helvetica Neue', sans-serif" }
+    ]
+    const render = new WechatRender({ theme, fonts: builtinFonts[0] })
+
+
     axios.get('./test.md').then(res => {
       this.setState({ src_content: res.data })
-      const dist_content = marked(res.data, { renderer: render.getWechatRenderer() })
+      let dist_content = marked(res.data, { renderer: render.getWechatRenderer() })
+      if (render.hasFootnotes()) {
+        dist_content += render.buildFootnotes()
+      }
       this.setState({ dist_content })
     })
   }
