@@ -3,7 +3,7 @@ export default {
         'text-align': 'left',
         'color': '#3f3f3f',
         'line-height': '1.5',
-        'font-size': '16px',
+        'font-size': '18px',
     },
     BASE_BLOCK: {
         'margin': '20px 10px'
@@ -12,14 +12,14 @@ export default {
     block: {
         h2: {
             'font-size': '140%',
-            'text-align': 'center',
-            'font-weight': 'normal',
-            'margin': '80px 10px 40px 10px'
+            'text-align': 'left',
+            'font-weight': '800',
+            'margin': '40px 0'
         },
         h3: {
-            'font-weight': 'bold',
+            'font-weight': '600',
             'font-size': '120%',
-            'margin': '40px 10px 20px 10px'
+            'margin': '20px 0'
         },
         p: {
             'margin': '10px 10px',

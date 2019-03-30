@@ -61,14 +61,8 @@ export default class Content extends Component {
               </div>
             </div>
           </div>
-
-          <div className='col s6'          >
-            <div className="card card__bg">
-              <div className="card-content ">
-                <span className="card-title">全选复制或点此复制，然后在公众号编辑器粘贴</span>
-                <RenderedContent content={dist_content}></RenderedContent>
-              </div>
-            </div>
+          <div className='col s6'>
+            <RenderedContent content={dist_content} />
           </div>
         </div>
       </div>
