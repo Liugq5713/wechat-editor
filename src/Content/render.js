@@ -5,7 +5,6 @@ export default class WechatRender {
         this.renderer = new marked.Renderer()
         this.theme = theme
         this.styleMapping = this.buildTheme(this.theme.theme)
-        console.log('this.styleMapping', this.styleMapping)
         this.footnoteindex = 0
         this.ENV_USE_REFERENCES = true
         this.ENV_STETCH_IMAGE = true
@@ -18,7 +17,6 @@ export default class WechatRender {
         return this.footnotes.length !== 0
     }
     buildTheme(themeTpl) {
-        console.log('themeTpl', themeTpl)
         const FONT_FAMILY_MONO = "Operator Mono, Consolas, Monaco, Menlo, monospace"
         const mapping = {}
         var base = this.COPY(themeTpl.BASE, {
