@@ -32,7 +32,9 @@ export default class Content extends Component {
         return (
             <div className="card card__bg">
                 <div className="card-content ">
-                    <span className="card-title">全选复制或<span onClick={this.copy}>点此复制</span>，然后在公众号编辑器粘贴</span>
+                    <span className="card-title">
+                        <span onClick={this.copy} class="waves-effect waves-light btn">点此复制，然后在公众号编辑器粘贴</span>
+                    </span>
                     <div id='output'>
                         <div dangerouslySetInnerHTML={
                             this.createMarkup(content)

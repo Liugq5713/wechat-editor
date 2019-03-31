@@ -49,7 +49,7 @@ export default class Content extends Component {
         styleActiveLine: true,
         mode: 'text/x-markdown'
       })
-
+      editor.setSize('100%', '100%')
       editor.on("changes", (cm, change) => {
         this.renderContent(editor.getValue())
       })
