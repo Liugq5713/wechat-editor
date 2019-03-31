@@ -1,6 +1,6 @@
 # wechat-editor
 
-使用时，你得把默认的 Markdown 内容换成你自己的内容。
+微信公众号排版编辑器，转换 Markdown 到微信特制的 HTML。使用时，你得把默认的 Markdown 内容换成你自己的内容。
 
 > 原作者关于本工具的介绍请看[这篇公众号文章](https://mp.weixin.qq.com/s/pn0LzyfgUj6rGUfVHUksjg)。
 
