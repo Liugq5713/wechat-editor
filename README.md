@@ -1,5 +1,9 @@
 # wechat-editor
 
+微信公众号排版编辑器，转化 Markdown 到给微信特制的 HTML
+
+使用在线版：http://www.so-easy.cc/wechat-editor/
+
 这个项目是基于[lyricat](https://github.com/lyricat/wechat-format)，这个项目的[使用介绍](https://mp.weixin.qq.com/s/pn0LzyfgUj6rGUfVHUksjg)，作者写的很好啦，源代码没有用 `npm`这些东西，就是纯纯的`html`，`javascript`,`css`，我看到的时候都震惊了，好久没有看到这样的代码了。于是我就拿`react`把它改造了一下。
 
 但是基于人家的代码，不比它好，就有点说不过去。说说我这个项目的优点吧。
@@ -15,3 +19,12 @@
 
 - 增加自定义的项
 - 增加一些预设，比如文末的请读者点个好看的引导语
+
+## 其他
+
+给这个项目加星星吧，或者关注我的微信公众号。希望能早日达成关注人数100人的小目标
+
+![微信公众号](./src/Nav/qrcode.jpg)
+
+
+[原项目传送门](https://github.com/lyricat/wechat-format)
