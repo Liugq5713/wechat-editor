@@ -19,7 +19,7 @@ export default class Nav extends Component {
                                 <a href="#!" className="tooltipped" data-position="bottom" data-tooltip="不要赞赏，关注我吧">赞赏</a>
                             </li>
                             <li>
-                                <a href="#!" className="waves-effect waves-light modal-trigger" href="#modal1">关注我</a>
+                                <a className="waves-effect waves-light modal-trigger" href="#modal1">关注我</a>
                             </li>
                         </ul>
                     </div>
