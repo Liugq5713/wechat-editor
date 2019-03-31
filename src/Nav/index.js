@@ -16,16 +16,19 @@ export default class Nav extends Component {
                     <div className='nav-wrapper'>
                         <ul id='nav-mobile' className='right hide-on-med-and-down'>
                             <li>
-                                <a href="#!" className="tooltipped" data-position="bottom" data-tooltip="不要赞赏，关注我吧">赞赏</a>
+                                <a href="#!" className="tooltipped " data-position="bottom" data-tooltip="不要赞赏，关注我吧">赞赏</a>
                             </li>
                             <li>
-                                <a className="waves-effect waves-light modal-trigger" href="#modal1">关注我</a>
+                                <a className="waves-effect waves-light modal-trigger" href="#modal1">
+                                    关注
+                                   </a>
                             </li>
                         </ul>
                     </div>
                     <div id="modal1" className="modal">
                         <div className="modal-content center-align">
                             <img src={qrcode} alt='微信公众号二维码' />
+                            <p>我的公众号，爱学习的都关注了</p>
                         </div>
                     </div>
                 </nav>

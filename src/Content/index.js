@@ -4,7 +4,7 @@ import marked from 'marked'
 import RenderedContent from '../RenderedContent'
 import Nav from '../Nav'
 import WechatRender from './render'
-import theme from '../Theme'
+import theme from './theme'
 
 import * as CodeMirror from 'codemirror/lib/codemirror'
 import 'codemirror/lib/codemirror.css'
