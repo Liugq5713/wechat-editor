@@ -32,7 +32,6 @@ export default class Content extends Component {
     if (render.hasFootnotes()) {
       dist_content += render.buildFootnotes()
     }
-
     this.setState({ dist_content })
   }
   componentDidMount() {
@@ -45,12 +44,16 @@ export default class Content extends Component {
         value: res.data,
         lineNumbers: true,
         lineWrapping: true,
+        theme: 'monokai',
         styleActiveLine: true,
         mode: 'text/x-markdown'
       })
       editor.setSize('100%', '100%')
-      editor.on("changes", (cm, change) => {
+      editor.on("change", (cm, change) => {
         this.renderContent(editor.getValue())
+        setTimeout(() => {
+          editor.refresh();
+        }, 0);
       })
     })
   }

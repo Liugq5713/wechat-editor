@@ -29,9 +29,6 @@ export default class Nav extends Component {
                         <div className="modal-content center-align">
                             <img src={qrcode} alt='微信公众号二维码' />
                         </div>
-                        <div class="modal-footer">
-                            <span>我的公众号，爱学习的都关注了</span>
-                        </div>
                     </div>
                 </nav>
             </div>
