@@ -9,28 +9,26 @@ export default class Editor extends Component {
     super(props)
     this.state = {
       value: 1,
-      editor:undefined
+      editor: undefined
     }
   }
 
   componentDidMount() {
     const editorContainer = document.getElementById('editorContainer')
-    const editor= CodeMirror.fromTextArea(editorContainer, {
+    const editor = CodeMirror.fromTextArea(editorContainer, {
       lineNumbers: true,
       lineWrapping: true,
       styleActiveLine: true,
       mode: 'text/x-markdown'
     })
-    this.setState({editor})
-  }
-  handlerChange = val => {
-    console.log('val', val)
+    editor.setSize('100%', '100%')
+    this.setState({ editor })
   }
   render() {
-    const {content} = this.props
-    const {editor} = this.state
-    if(editor){
-      editor.setValue(content||'')
+    const { content } = this.props
+    const { editor } = this.state
+    if (editor) {
+      editor.setValue(content || '')
     }
     return (
       <textarea

@@ -90,7 +90,6 @@ section {
 }
 .code-snippet__fix {
   word-wrap: break-word !important;
-  ont-size: 14px;
   margin: 10px 0;
   display: block;
   color: #333;
