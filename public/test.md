@@ -1,6 +1,8 @@
+# wechat-editor
+
 使用时，你得把默认的 Markdown 内容换成你自己的内容。
 
-# wechat-editor
+> 原作者关于本工具的介绍请看[这篇公众号文章](https://mp.weixin.qq.com/s/pn0LzyfgUj6rGUfVHUksjg)。
 
 这个项目是基于[lyricat](https://github.com/lyricat/wechat-format)，这个项目的[使用介绍](https://mp.weixin.qq.com/s/pn0LzyfgUj6rGUfVHUksjg)，作者写的很好啦，源代码没有用 `npm`这些东西，就是纯纯的`html`，`javascript`,`css`，我看到的时候都震惊了，好久没有看到这样的代码了。于是我就拿`react`把它改造了一下。
 
@@ -17,7 +19,7 @@
 
 - 增加自定义的项
 - 增加一些预设，比如文末的请读者点个好看的引导语
-关于本工具的介绍请看[这篇公众号文章](https://mp.weixin.qq.com/s/pn0LzyfgUj6rGUfVHUksjg)。
+
 
 
 ## 一级标题

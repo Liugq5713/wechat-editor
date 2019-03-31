@@ -15,4 +15,3 @@
 
 - 增加自定义的项
 - 增加一些预设，比如文末的请读者点个好看的引导语
-关于本工具的介绍请看[这篇公众号文章](https://mp.weixin.qq.com/s/pn0LzyfgUj6rGUfVHUksjg)。
