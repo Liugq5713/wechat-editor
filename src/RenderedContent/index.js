@@ -33,7 +33,7 @@ export default class Content extends Component {
             <div className="card card__bg">
                 <div className="card-content ">
                     <span className="card-title">
-                        <span onClick={this.copy} class="waves-effect waves-light btn">点此复制，然后在公众号编辑器粘贴</span>
+                        <span onClick={this.copy} className="waves-effect waves-light light-blue btn">点此复制，然后在公众号编辑器粘贴</span>
                     </span>
                     <div id='output'>
                         <div dangerouslySetInnerHTML={

@@ -2,10 +2,9 @@ import React, { Component } from 'react'
 import axios from 'axios'
 import marked from 'marked'
 import RenderedContent from '../RenderedContent'
+import Nav from '../Nav'
 import WechatRender from './render'
-import logo from './logo.png'
 import theme from '../Theme'
-import './index.css'
 
 import * as CodeMirror from 'codemirror/lib/codemirror'
 import 'codemirror/lib/codemirror.css'
@@ -61,18 +60,7 @@ export default class Content extends Component {
     const { src_content, dist_content } = this.state
     return (
       <div>
-        <nav className='nav'>
-          <div className='nav-wrapper'>
-            <a href='/' className='brand-logo brand-logo-container'>
-              <img src={logo} alt='test' className='logo' />
-            </a>
-            <ul id='nav-mobile' className='right hide-on-med-and-down'>
-              <li>
-                <a href='/'>sass</a>
-              </li>
-            </ul>
-          </div>
-        </nav>
+        <Nav />
         <div className='row'>
           <div className='col s6'>
             <div className="card card__bg">
