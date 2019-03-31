@@ -62,9 +62,9 @@ export default class WechatRender {
     buildFootnotes() {
         const footnoteArray = this.footnotes.map(function (x) {
             if (x[1] === x[2]) {
-                return '<code style="font-size: 90%; opacity: 0.6;">[' + x[0] + ']</code>: <i>' + x[1] + '</i><br/>'
+                return '<code style="font-size: 90%; opacity: 0.7;">[' + x[0] + ']</code>: ' + x[1] + '<br/>'
             }
-            return '<code style="font-size: 90%; opacity: 0.6;">[' + x[0] + ']</code> ' + x[1] + ': <i>' + x[2] + '</i><br/>'
+            return '<code style="font-size: 90%; opacity: 0.7;">[' + x[0] + ']</code> ' + x[1] + ': ' + x[2] + '<br/>'
         })
         return '<h3 ' + this.S('h3') + '>References</h3><p ' + this.S('footnotes') + '>' + footnoteArray.join('\n') + '</p>'
     }

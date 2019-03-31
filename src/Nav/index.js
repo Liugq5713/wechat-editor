@@ -21,14 +21,16 @@ export default class Nav extends Component {
                             <li>
                                 <a className="waves-effect waves-light modal-trigger" href="#modal1">
                                     关注
-                                   </a>
+                                </a>
                             </li>
                         </ul>
                     </div>
                     <div id="modal1" className="modal">
                         <div className="modal-content center-align">
                             <img src={qrcode} alt='微信公众号二维码' />
-                            <p>我的公众号，爱学习的都关注了</p>
+                        </div>
+                        <div class="modal-footer">
+                            <span>我的公众号，爱学习的都关注了</span>
                         </div>
                     </div>
                 </nav>

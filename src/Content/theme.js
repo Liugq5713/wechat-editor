@@ -1,9 +1,11 @@
+const fontSize = 18
+
 export default {
     BASE: {
         'text-align': 'left',
         'color': '#3f3f3f',
         'line-height': '1.5',
-        'font-size': '18px',
+        'font-size': `${fontSize}px`,
     },
     BASE_BLOCK: {
         'margin': '20px 10px'
@@ -22,8 +24,8 @@ export default {
             'margin': '20px 0'
         },
         p: {
-            'margin': '10px 10px',
-            'line-height': '1.6'
+            'margin': `${fontSize}px`,
+            'line-height': '1.5'
         },
         blockquote: {
             'color': 'rgb(91, 91, 91)',
