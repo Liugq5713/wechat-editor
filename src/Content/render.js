@@ -13,9 +13,7 @@ export default class WechatRender {
   COPY(base, extend) {
     return Object.assign({}, base, extend)
   }
-  hasFootnotes() {
-    return this.footnotes.length !== 0
-  }
+
   buildTheme(themeTpl) {
     const FONT_FAMILY_MONO = 'Operator Mono, Consolas, Monaco, Menlo, monospace'
     const mapping = {}
@@ -60,25 +58,18 @@ export default class WechatRender {
     return this.footnoteindex
   }
   buildFootnotes() {
+    if (this.footnotes.length === 0) {
+      return
+    }
     const footnoteArray = this.footnotes.map(function(x) {
       if (x[1] === x[2]) {
-        return (
-          '<code style="font-size: 90%; opacity: 0.7;">[' +
-          x[0] +
-          ']</code>: ' +
-          x[1] +
-          '<br/>'
-        )
+        return `<code style="font-size: 90%; opacity: 0.7;">[${x[0]}]</code>: ${
+          x[1]
+        }<br/>`
       }
-      return (
-        '<code style="font-size: 90%; opacity: 0.7;">[' +
-        x[0] +
-        ']</code> ' +
-        x[1] +
-        ': ' +
-        x[2] +
-        '<br/>'
-      )
+      return `<code style="font-size: 90%; opacity: 0.7;">[${
+        x[0]
+      }]</code> ${x[1]} :${x[2]}<br/>`
     })
     return (
       '<h3 ' +
@@ -93,9 +84,9 @@ export default class WechatRender {
   getWechatRenderer() {
     this.renderer.heading = (text, level) => {
       if (level < 3) {
-        return '<h2 ' + this.S('h2') + '>' + text + '</h2>'
+        return `<h2 ${this.S('h2')}>${text}</h2>`
       } else {
-        return '<h3 ' + this.S('h3') + '>' + text + '</h3>'
+        return `<h3 ${this.S('h3')}>${text}</h3>`
       }
     }
     this.renderer.paragraph = text => {
@@ -149,9 +140,9 @@ export default class WechatRender {
     }
     this.renderer.list = (text, ordered, start) => {
       if (!ordered) {
-        return '<p ' + this.S('ul') + '>' + text + '</p>'
+        return `<p ${this.S('ul')}> ${text}</p>`
       }
-      return '<p ' + this.S('ol') + '>' + text + '</p>'
+      return `<p ${this.S('ol')}> ${text}</p>`
     }
     this.renderer.image = (href, title, text) => {
       return (

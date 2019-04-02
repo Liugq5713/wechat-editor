@@ -26,9 +26,7 @@ export default class Content extends Component {
   renderContent = content => {
     const render = new WechatRender(theme)
     let dist_content = marked(content, { renderer: render.getWechatRenderer() })
-    if (render.hasFootnotes()) {
-      dist_content += render.buildFootnotes()
-    }
+    dist_content += render.buildFootnotes()
     this.setState({ dist_content })
   }
   componentDidMount() {
