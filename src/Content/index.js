@@ -5,6 +5,7 @@ import RenderedContent from '../RenderedContent'
 import Nav from '../Nav'
 import WechatRender from './render'
 import theme from './theme'
+import ThemeCustom from '../ThemeCustom'
 
 import * as CodeMirror from 'codemirror/lib/codemirror'
 import 'codemirror/lib/codemirror.css'
@@ -14,20 +15,16 @@ export default class Content extends Component {
     super(props)
     this.state = {
       src_content: undefined,
-      dist_content: undefined,
+      dist_content: undefined
     }
   }
 
-  setSrcContent = (src_content) => {
+  setSrcContent = src_content => {
     this.setState({ src_content })
   }
 
-  renderContent = (content) => {
-    const builtinFonts = [
-      { label: '衬线', value: 'serif', fonts: "Optima-Regular, Optima, PingFangSC-light, PingFangTC-light, 'PingFang SC', Cambria, Cochin, Georgia, Times, 'Times New Roman', serif" },
-      { label: '无衬线', value: 'sans-serif', fonts: "Roboto, Oxygen, Ubuntu, Cantarell, PingFangSC-light, PingFangTC-light, 'Open Sans', 'Helvetica Neue', sans-serif" }
-    ]
-    const render = new WechatRender({ theme, fonts: builtinFonts[0] })
+  renderContent = content => {
+    const render = new WechatRender(theme)
     let dist_content = marked(content, { renderer: render.getWechatRenderer() })
     if (render.hasFootnotes()) {
       dist_content += render.buildFootnotes()
@@ -49,15 +46,14 @@ export default class Content extends Component {
         mode: 'text/x-markdown'
       })
       editor.setSize('100%', '100%')
-      editor.on("change", (cm, change) => {
+      editor.on('change', (cm, change) => {
         this.renderContent(editor.getValue())
         setTimeout(() => {
-          editor.refresh();
-        }, 0);
+          editor.refresh()
+        }, 0)
       })
     })
   }
-
 
   render() {
     const { src_content, dist_content } = this.state
@@ -66,9 +62,10 @@ export default class Content extends Component {
         <Nav />
         <div className='row'>
           <div className='col s6'>
-            <div className="card card__bg">
-              <div className="card-content ">
-                <span className="card-title">Markdown内容</span>
+            <div className='card card__bg'>
+              <div className='card-content '>
+                <span className='card-title'>Markdown内容</span>
+                <ThemeCustom />
                 <textarea
                   id='editorContainer'
                   value={src_content}
@@ -80,8 +77,8 @@ export default class Content extends Component {
           <div className='col s6'>
             <RenderedContent content={dist_content} />
           </div>
-        </div >
-      </div >
+        </div>
+      </div>
     )
   }
 }
