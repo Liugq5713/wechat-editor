@@ -10,7 +10,8 @@ export default class A2HS extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('beforeinstallprompt', function(e) {
+    window.addEventListener('beforeinstallprompt', e => {
+      console.log('e', e)
       e.preventDefault()
       this.setState({ deferredPrompt: e, showTip: true })
     })
