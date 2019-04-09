@@ -22,7 +22,7 @@ export default class A2HS extends Component {
     const { deferredPrompt } = this.state
     console.log('deferredPrompt', deferredPrompt)
     deferredPrompt.prompt()
-    deferredPrompt.userChoice.then(function(choiceResult) {
+    deferredPrompt.userChoice.then(choiceResult => {
       if (choiceResult.outcome === 'accepted') {
         console.log('User accepted the A2HS prompt')
       } else {
