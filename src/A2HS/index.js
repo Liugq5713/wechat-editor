@@ -20,6 +20,7 @@ export default class A2HS extends Component {
   handleClick = () => {
     this.setState({ showTip: false })
     const { deferredPrompt } = this.state
+    console.log('deferredPrompt', deferredPrompt)
     deferredPrompt.prompt()
     deferredPrompt.userChoice.then(function(choiceResult) {
       if (choiceResult.outcome === 'accepted') {
@@ -51,6 +52,7 @@ export default class A2HS extends Component {
             添加 wechat-editor 到您的桌面
             <span
               className='waves-effect waves-light btn  blue  darken-2 '
+              onClick={this.handleClick}
               style={{ marginLeft: '10px', marginTop: '-10px' }}
             >
               添加
