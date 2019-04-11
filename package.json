@@ -2,7 +2,6 @@
   "name": "wechat-editor",
   "version": "1.0.0",
   "private": false,
-  "homepage": "https://www.so-easy.cc/wechat-editor",
   "dependencies": {
     "axios": "^0.18.0",
     "codemirror": "^5.45.0",
