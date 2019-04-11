@@ -24,3 +24,9 @@ workbox.routing.registerRoute(
     cacheName: 'cache'
   })
 )
+workbox.routing.registerRoute(
+  new RegExp('https:.*\.(md|json|ico)'),
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'cache'
+  })
+)
